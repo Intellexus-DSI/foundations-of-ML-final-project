@@ -173,7 +173,7 @@ if __name__ == "__main__":
             # "EuroSAT": args.epochs,
             # "GTSRB": args.epochs,
             # "MNIST": args.epochs,
-            "RESISC45": args.epochs,
+            # "RESISC45": args.epochs,
             "SUN397": args.epochs,
             "SVHN": args.epochs,
             "CIFAR10": args.epochs,
