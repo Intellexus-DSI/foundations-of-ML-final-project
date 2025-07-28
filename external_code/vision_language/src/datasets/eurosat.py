@@ -15,7 +15,7 @@ class EuroSATBase:
     def __init__(self,
                  preprocess,
                  test_split,
-                 location='~/datasets',
+                 location='~/gpufs/datasets',
                  batch_size=32,
                  num_workers=16):
         # Data loading code

@@ -1,4 +1,5 @@
 import os
+# os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"
 import time
 
 import torch
@@ -14,7 +15,9 @@ from accelerate import Accelerator
 from accelerate.utils import set_seed
 from tqdm import tqdm
 
+
 def finetune(args):
+    print(f"****** {args.no_log} ********")
     train_dataset = args.train_dataset
     ckpdir = os.path.join(args.save, train_dataset)
     model = get_model(args)
@@ -165,11 +168,11 @@ if __name__ == "__main__":
         
     if not isinstance(args.data_ratio, float):
         epochs = {
-            "Cars": args.epochs,
-            "DTD": args.epochs,
-            "EuroSAT": args.epochs,
-            "GTSRB": args.epochs,
-            "MNIST": args.epochs,
+            # "Cars": args.epochs,
+            # "DTD": args.epochs,
+            # "EuroSAT": args.epochs,
+            # "GTSRB": args.epochs,
+            # "MNIST": args.epochs,
             "RESISC45": args.epochs,
             "SUN397": args.epochs,
             "SVHN": args.epochs,

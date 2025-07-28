@@ -522,7 +522,7 @@ class MultiheadAttention(nn.MultiheadAttention, LoRALayer):
             lora_alpha (int, optional): Scaling factor for the LoRA contribution. Defaults to 1.
             **kwargs: Additional keyword arguments passed to the nn.MultiheadAttention constructor.
         """
-        nn.MultiheadAttention.__init__(self, embed_dim, num_heads, **kwargs)
+        nn.MultiheadAttention.__init__(self, embed_dim, num_heads, batch_first=True, **kwargs)
         self.basis_b, self.basis_a = basis
         n, _, r = self.basis_b.shape
 
@@ -583,6 +583,7 @@ class MultiheadAttention(nn.MultiheadAttention, LoRALayer):
             result = nn.MultiheadAttention.forward(
                 self, query, key, value, **kwargs
             )
+
             set_param(self, 'in_proj_weight', param=p, mode="update")
             
             return result
