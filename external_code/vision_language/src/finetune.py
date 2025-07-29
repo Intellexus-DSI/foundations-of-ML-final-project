@@ -17,7 +17,6 @@ from tqdm import tqdm
 
 
 def finetune(args):
-    print(f"****** {args.no_log} ********")
     train_dataset = args.train_dataset
     ckpdir = os.path.join(args.save, train_dataset)
     model = get_model(args)
@@ -168,28 +167,28 @@ if __name__ == "__main__":
         
     if not isinstance(args.data_ratio, float):
         epochs = {
-            # "Cars": args.epochs,
-            # "DTD": args.epochs,
-            # "EuroSAT": args.epochs,
-            # "GTSRB": args.epochs,
-            # "MNIST": args.epochs,
-            # "RESISC45": args.epochs,
+            "Cars": args.epochs,
+            "DTD": args.epochs,
+            "EuroSAT": args.epochs,
+            "GTSRB": args.epochs,
+            "MNIST": args.epochs,
+            "RESISC45": args.epochs,
             "SUN397": args.epochs,
             "SVHN": args.epochs,
             "CIFAR10": args.epochs,
             "CIFAR100": args.epochs,        
             "STL10": args.epochs,
             "Food101": args.epochs,
-            "Caltech256": args.epochs,
-            "FGVCAircraft": args.epochs,
+            # "Caltech256": args.epochs,
+            # "FGVCAircraft": args.epochs,
             "Flowers102": args.epochs,
             "OxfordIIITPet": args.epochs,
             "CUB200": args.epochs,
             "PascalVOC": args.epochs,
-            "Country211": args.epochs,
-            "Caltech101": args.epochs,
-            "UCF101": args.epochs,
-            "ImageNet": args.epochs,
+            # "Country211": args.epochs,
+            # "Caltech101": args.epochs,
+            # "UCF101": args.epochs,
+            # "ImageNet": args.epochs,
         }
     else:
         epochs = {
@@ -205,16 +204,16 @@ if __name__ == "__main__":
             "CIFAR100": 6,
             "STL10": 4,
             "Food101": 15,
-            "Caltech256": 8,
-            "FGVCAircraft": 60,
+            # "Caltech256": 8,
+            # "FGVCAircraft": 60,
             "Flowers102": 40,
             "OxfordIIITPet": 5,
             "CUB200": 20,
             "PascalVOC": 10,
-            "Country211": 15,
-            "Caltech101":10,
-            "UCF101": 20,
-            "ImageNet": 10,           
+            # "Country211": 15,
+            # "Caltech101":10,
+            # "UCF101": 20,
+            # "ImageNet": 10,           
         }
 
     if args.datasets is not None: #Train on specific datasets
